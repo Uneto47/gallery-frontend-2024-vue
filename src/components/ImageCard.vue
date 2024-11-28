@@ -32,10 +32,9 @@ const isHovered = ref(false);
     
     <div class="text-center p-4">
       <h3 class="flex font-semibold text-sm mb-2 h-8 justify-center">{{ image.title }}</h3>
-      <p class="text-gray-500 text-sm">ID: {{ image.id }}</p>
     </div>
 
-    <div class="flex justify-center p-4">
+    <div class="flex justify-center pb-4">
       <button
         :class="isFavorited ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'"
         @click="toggleFavorite"
