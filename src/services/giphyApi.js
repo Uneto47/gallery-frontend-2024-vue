@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = '5axsJghhDQ1SEMwz0yHlAXPiMrRSoGMr';
+const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = 'https://api.giphy.com/v1/gifs/';
 
 export const searchImages = async (query) => {
@@ -13,7 +13,7 @@ export const searchImages = async (query) => {
       }
     });
 
-    console.log(response)
+    console.log(response);
     return response.data.data; 
   } catch (error) {
     console.error('Erro ao buscar imagens:', error);
@@ -30,7 +30,7 @@ export const loadTrendingImages = async () => {
       }
     });
 
-    console.log(response)
+    console.log(response);
     return response.data.data;
   } catch (error) {
     console.error('Erro ao carregar imagens aleatórias:', error);
