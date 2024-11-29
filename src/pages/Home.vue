@@ -22,25 +22,25 @@ const fetchRandomImages = async () => {
   }
 };
 
-onMounted(() => {
-  fetchRandomImages();  
+onMounted(async () => {
+  await fetchRandomImages();  
 });
 </script>
 
 <template>
-  <div class="home-container space-y-6">
+  <div class="space-y-4">
     <SearchBar @search="fetchImages" />
 
     <div 
       v-if="images.length"
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-4"
     >
-      <ImageCard
-        v-for="image in images"
-        :key="image.id"
-        :image="image"
-        class="translate"
-      />
+    <ImageCard
+      v-for="image in images"
+      :key="image.id"
+      :image="image"
+      class="translate"
+    />
     </div>
 
     <div 
